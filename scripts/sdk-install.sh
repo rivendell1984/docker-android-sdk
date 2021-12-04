@@ -14,6 +14,6 @@ yes | sdkmanager --licenses
 
 echo "Installing SDK $1"
 sdkmanager "build-tools;$1"
-sdkmanager --package_file=/opt/tools/package-list-minimal.txt
+sdkmanager --package_file=/opt/scripts/package-list-minimal.txt
 
 
