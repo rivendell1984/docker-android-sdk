@@ -19,4 +19,4 @@ WORKDIR /opt/android-sdk-linux
 
 RUN /opt/scripts/sdk-install.sh ${ANDROID_BUILD_TOOLS_VERSION}
 
-ENTRYPOINT ["/opt/scripts/entrypoint.sh"]
+CMD ["/opt/scripts/entrypoint.sh"]
