@@ -1,0 +1,14 @@
+cmake;3.18.1
+extras;android;m2repository
+extras;google;auto
+extras;google;google_play_services
+extras;google;instantapps
+extras;google;m2repository
+extras;google;market_apk_expansion
+extras;google;market_licensing
+extras;google;simulators
+extras;google;webdriver
+extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2
+platform-tools
+platforms;android-31
+tools
