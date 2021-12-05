@@ -25,8 +25,8 @@ jobs:
 
       # get the latest tag
       - name: 'Get Previous tag'
-        id: previoustag
-        uses: "WyriHaximus/github-action-get-previous-tag@v1"
+        id: previous_tag
+        run: echo "::set-output name=TAGNAME::$(git describe --abbrev=0 --tags)"
 
       # setup Docker build action
       - name: Set up Docker Buildx
@@ -45,10 +45,10 @@ jobs:
           # relative path to the place where source code with Dockerfile is located
           context: .
           build-args: |
-            ANDROID_BUILD_TOOLS_VERSION=${{ steps.previoustag.outputs.tag }}
+            ANDROID_BUILD_TOOLS_VERSION=${{ steps.previous_tag.outputs.TAGNAME }}
           # Note: tags has to be all lower-case
           tags: |
-            rivendell1984/docker-android-sdk:${{ steps.previoustag.outputs.tag }}
+            rivendell1984/docker-android-sdk:${{ steps.previous_tag.outputs.TAGNAME }}
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/main' }}
 
